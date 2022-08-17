@@ -1,0 +1,70 @@
+class Solution {
+    public int findDuplicate(int[] arr) {
+        int i = 0;
+        while(i<arr.length){ 
+        int correct = arr[i] -1;
+        if(arr[i] != arr[correct]){
+            swap(arr ,i , correct);
+        }else{
+            i++;
+        }
+    }
+    // du[laicates ]
+    for(int ind = 0 ;ind<arr.length ;ind++){
+        if(arr[ind]-1 !=  ind){
+            return arr[ind];
+        }
+    }
+        return -1;
+    }
+
+void swap(int[] arr, int first, int second) {
+        int temp = arr[first];
+        arr[first] = arr[second];
+        arr[second] = temp;
+    }
+}
+
+// gdb ................
+
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+public class Main
+{
+	public static void main(String[] args) {
+int arr[]= {1,3,4,2,2};
+System.out.print(findDuplicate(arr));
+	}
+
+    static int findDuplicate(int[] arr) {
+        int i = 0;
+        while(i<arr.length){ 
+        int correct = arr[i] -1;
+        if(arr[i] != arr[correct]){
+            swap(arr ,i , correct);
+        }else{
+            i++;
+        }
+    }
+    // du[laicates ]
+    for(int ind = 0 ;ind<arr.length ;ind++){
+        if(arr[ind]-1 !=  ind){
+            return arr[ind];
+        }
+    }
+        return -1;
+    }
+
+static void swap(int[] arr, int first, int second) {
+        int temp = arr[first];
+        arr[first] = arr[second];
+        arr[second] = temp;
+    }
+}
+
